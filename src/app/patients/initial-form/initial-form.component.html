@@ -1,0 +1,252 @@
+<mat-toolbar color="primary">
+	<mat-toolbar-row>
+		<span>AltaVida</span>
+	</mat-toolbar-row>
+</mat-toolbar>
+
+<div class="container text-center">
+	<img src="assets/img/logo.jpg" alt="0">
+</div>
+
+<h2 class="mat-h2 text-center">
+	Este es el primer paso para descubrir cuál es el Estilo de Alimentación que más te beneficia a corto, mediano y largo plazo. 
+</h2>
+
+<h2 class="mat-h2 text-center">
+	Esta información, al igual que tu tiempo, es muy valiosa. Por eso, hemos diseñado este test para que sea lo más completo posible y a la vez lo más rápido de contestar. En promedio, a las personas les toma de 20 minutos el contestar este test.
+</h2>
+
+<h2 class="mat-h2 text-center">
+	Ten a la mano una cinta para medirte y una bascula para conocer tu peso actual.
+</h2>
+
+<mat-card class="example-card">
+	<mat-card-header>
+		<mat-card-title>
+			SECCIÓN I Información Personal
+		</mat-card-title>
+	</mat-card-header>
+
+	<mat-card-content>
+		<div class="example-container">
+			<mat-form-field>
+				<input matInput placeholder="**Nombre completo">
+			</mat-form-field>
+
+			<mat-form-field>
+				<input matInput [matDatepicker]="picker" placeholder="**Fecha de nacimiento">
+				<mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+				<mat-datepicker #picker></mat-datepicker>
+			</mat-form-field>
+			
+			<h4>**Genero</h4>
+			<mat-form-field>
+				<select matNativeControl required>
+					<option value="">Selecciona</option>
+					<option value="">Femenino</option>
+					<option value="">Masculino</option>
+				</select>
+			</mat-form-field>
+
+			<h4>Estado civil</h4>
+			<mat-form-field>
+				<select matNativeControl required>
+					<option value="">Selecciona</option>
+					<option value="">Femenino</option>
+					<option value="">Masculino</option>
+				</select>
+			</mat-form-field>
+
+			<mat-form-field>
+				<input matInput placeholder="Número de integrantes en tu familia">
+			</mat-form-field>
+
+			<mat-form-field>
+				<input matInput placeholder="**Email">
+			</mat-form-field>
+
+			<mat-form-field>
+				<input matInput placeholder="**Teléfono">
+			</mat-form-field>
+
+			<h4>**¿Como te enteraste de nosotros?</h4>
+			<mat-form-field>
+				<select matNativeControl required>
+					<option value="">Selecciona</option>
+					<option value="">Femenino</option>
+					<option value="">Masculino</option>
+				</select>
+			</mat-form-field>
+
+			<mat-form-field>
+				<input matInput placeholder="**¿En que pais y ciudad vives?">
+			</mat-form-field>
+		</div>
+	</mat-card-content>
+</mat-card>
+
+<!-- Card 2 -->
+<mat-card class="example-card">
+	<mat-card-header>
+		<mat-card-title>
+			SECCIÓN II Historial Nutricional. Tu salud es lo más importante
+		</mat-card-title>
+	</mat-card-header>
+
+	<mat-card-content>
+		<div class="example-container">
+			<mat-form-field>
+				<input type="number" matInput placeholder="**¿Cuál es tu peso actualmente?">
+			</mat-form-field>
+
+			<mat-form-field>
+				<input type="number" matInput placeholder="**¿Cuál es tu estatura?">
+			</mat-form-field>
+
+			<mat-form-field>
+				<input type="number" matInput placeholder="¿Cuál es tu circunferencia abdominal? (en cm) Mide tu abdomen, que la cinta pase justo a la altura de tu ombligo. Toma tres veces la medida y anota todas las mediciones obtenidas.">
+			</mat-form-field>
+
+			<mat-form-field>
+				<input type="number" matInput placeholder="¿Cuál es tu circunferencia de cadera? (en cm)">
+			</mat-form-field>
+
+			<mat-form-field>
+				<input matInput placeholder="¿Realizas algún tipo de ejercicio? ¿Cuál? ¿Con qué frecuencia? ¿En qué horario?">
+			</mat-form-field>
+
+			<mat-form-field>
+				<input matInput placeholder="¿Consumes algún alimento, bebida o suplemento antes/durante/final del ejercicio? ¿Cuál?">
+			</mat-form-field>
+
+			<mat-form-field>
+				<input matInput placeholder="¿Fumas? ¿Con qué Frecuencia?">
+			</mat-form-field>
+
+			<mat-form-field>
+				<input matInput placeholder="**¿Cuánta agua natural consumes al día?">
+			</mat-form-field>
+
+			<mat-form-field>
+				<input matInput placeholder="¿Consumes café? ¿Con qué frecuencia? ¿Cómo lo preparas?">
+			</mat-form-field>
+
+			<mat-form-field>
+				<input matInput placeholder="¿Consumes alcohol? ¿Con qué frecuencia?">
+			</mat-form-field>
+
+			<mat-form-field>
+				<input matInput placeholder="¿Sueles cocinar tus alimentos o alguien lo hace por ti?">
+			</mat-form-field>
+
+			<mat-form-field>
+				<input matInput placeholder="¿Has padecido alguna enfermedad importante? ¿Cuál?">
+			</mat-form-field>
+
+			<mat-form-field>
+				<input matInput placeholder="¿Tomas algún medicamento actualmente? ¿Cuál? ¿Qué dosis? ¿Desde cuándo?">
+			</mat-form-field>
+
+			<mat-form-field>
+				<input matInput placeholder="¿Actualmente tomas algún laxante, diurético o antiácido?">
+			</mat-form-field>
+
+			<mat-form-field>
+				<input matInput placeholder="¿Te han practicado alguna cirugía? ¿Cuál?">
+			</mat-form-field>
+
+			<mat-form-field>
+				<input matInput placeholder="**¿Algún familiar directo ha padecido alguna enfermedad como diabetes, presión alta, cáncer, lípidos elevados o alguna otra? ¿Quién?">
+			</mat-form-field>
+
+			<mat-form-field>
+				<input matInput placeholder="**¿Cuántas comidas realizas al día?">
+			</mat-form-field>
+
+			<mat-form-field>
+				<input matInput placeholder="¿Comes fuera de casa? ¿Cuántos días a la semana? ¿Puedes llevar comida preparada?">
+			</mat-form-field>
+
+			<mat-form-field>
+				<input matInput placeholder="¿Consumes algún suplemento o vitaminas? ¿Cuál? ¿En qué dosis?">
+			</mat-form-field>
+
+			<mat-form-field>
+				<input matInput placeholder="**¿Presentas alergia o intolerancia a algún alimento?">
+			</mat-form-field>
+
+			<mat-form-field>
+				<textarea matInput placeholder="**¿Existe algún alimento que te desagrade?" cols="30" rows="5"></textarea>
+			</mat-form-field>
+
+			<mat-form-field>
+				<textarea matInput placeholder="**¿Cuáles son las frutas y verduras de mayor agrado para ti?" cols="30" rows="5"></textarea>
+			</mat-form-field>
+
+			<mat-form-field>
+				<textarea matInput placeholder="**¿Qué alimento no es de tu agrado?" cols="30" rows="5"></textarea>
+			</mat-form-field>
+
+			<mat-form-field>
+				<textarea matInput placeholder="Desayuno" cols="30" rows="5"></textarea>
+			</mat-form-field>
+
+			<mat-form-field>
+				<textarea matInput placeholder="Entre comida por la mañana" cols="30" rows="5"></textarea>
+			</mat-form-field>
+
+			<mat-form-field>
+				<textarea matInput placeholder="Comida" cols="30" rows="5"></textarea>
+			</mat-form-field>
+
+			<mat-form-field>
+				<textarea matInput placeholder="Entre comida por la tarde" cols="30" rows="5"></textarea>
+			</mat-form-field>
+
+			<mat-form-field>
+				<textarea matInput placeholder="Cena" cols="30" rows="5"></textarea>
+			</mat-form-field>
+		</div>
+	</mat-card-content>
+</mat-card>
+
+<!-- Card 3 -->
+<mat-card class="example-card">
+	<mat-card-header>
+		<mat-card-title>
+			SECCIÓN III La razón por la que deseas encontrar tu Estilo de Alimentación
+		</mat-card-title>
+	</mat-card-header>
+
+	<mat-card-content>
+		<div class="example-container">
+			<mat-form-field>
+				<textarea matInput placeholder="¿Cuál el propósito principal para construir tu estilo de alimentación?" cols="30" rows="5"></textarea>
+			</mat-form-field>
+
+			<mat-form-field>
+				<textarea matInput placeholder="**¿Cuál es tu razón principal para seguir este Estilo de Alimentación?" cols="30" rows="5"></textarea>
+			</mat-form-field>
+
+			<mat-form-field>
+				<textarea matInput placeholder="¿Cuál es tu meta más próxima?" cols="30" rows="5"></textarea>
+			</mat-form-field>
+
+			<mat-form-field>
+				<textarea matInput placeholder="¿Cuál es tu meta a alcanzar en 6 meses?" cols="30" rows="5"></textarea>
+			</mat-form-field>
+
+			<mat-form-field>
+				<textarea matInput placeholder="¿Cuál es tu meta a alcanzar en 1 año?" cols="30" rows="5"></textarea>
+			</mat-form-field>
+
+			<mat-form-field>
+				<textarea matInput placeholder="¿Cuál es tu meta a alcanzar en 2 años?" cols="30" rows="5"></textarea>
+			</mat-form-field>
+
+			<mat-form-field>
+				<textarea matInput placeholder="¿Cómo te gustaría que fuera tu salud cuando llegues a una edad avanzada?" cols="30" rows="5"></textarea>
+			</mat-form-field>
+		</div>
+	</mat-card-content>
+</mat-card>
