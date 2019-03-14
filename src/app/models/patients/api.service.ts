@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { HttpHeaders } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
@@ -15,6 +16,9 @@ export class ApiService {
   	let params = {
   		id: patientId
   	}
+    let headers = new HttpHeaders({
+      'Content-Type': 'application/json'
+    });
 
   	return this.httpClient.post(url, params);
   }

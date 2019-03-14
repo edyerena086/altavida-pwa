@@ -1,12 +1,16 @@
-<mat-toolbar color="primary">
+<!--<mat-toolbar color="primary">
 	<mat-toolbar-row>
 		<span>AltaVida</span>
 	</mat-toolbar-row>
-</mat-toolbar>
+</mat-toolbar>-->
 
 <div class="container text-center">
 	<img src="assets/img/logo.jpg" alt="0">
 </div>
+
+<h2 class="mat-h2 text-center" [hidden]="!showInitialForm">
+	¡Hola!, {{ initialForm.nombre }} 
+</h2>
 
 <h2 class="mat-h2 text-center">
 	Este es el primer paso para descubrir cuál es el Estilo de Alimentación que más te beneficia a corto, mediano y largo plazo. 
