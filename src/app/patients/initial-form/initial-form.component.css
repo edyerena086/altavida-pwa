@@ -8,5 +8,20 @@
 }
 
 .example-card {
-	margin-top: 2rem;
+	margin-top: 8rem;
+}
+
+.wrapper {
+	width: 100%;
+}
+
+.blocker {
+	padding-top: 1rem;
+	padding-bottom: 2.5rem;
+}
+
+.myH2 {
+	color: #3f5f74;
+	font-size: 2rem;
+	padding-bottom: 4rem;
 }
