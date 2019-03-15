@@ -50,9 +50,52 @@
 						<select [(ngModel)]="initialForm.genero" name="genero" #genero="ngModel" matNativeControl required>
 							<option value="">Selecciona</option>
 							<option value="1">Mujer</option>
-							<option value="1">Hombre</option>
+							<option value="2">Hombre</option>
 						</select>
 					</mat-form-field>
+
+					<div [hidden]="initialForm.genero != 1">
+						<h4>**¿Estas embarazada?</h4>
+						<mat-form-field>
+							<select [(ngModel)]="initialForm.estasEmbarazada" name="estasEmbarazada" #estasEmbarazada="ngModel" matNativeControl required>
+								<option value="">Selecciona</option>
+								<option value="1">Si</option>
+								<option value="2">No</option>
+							</select>
+						</mat-form-field>
+						
+						<div [hidden]="initialForm.estasEmbarazada != 1">
+							<mat-form-field>
+								<input [(ngModel)]="initialForm.numeroDeEmbarazo" name="numeroDeEmbarazo" #numeroDeEmbarazo="ngModel" matInput placeholder="**Número de embarazo">
+							</mat-form-field>
+						</div>
+
+						<div [hidden]="initialForm.numeroDeEmbarazo <= 1">
+							<h4>**Tuvo problemas con su embarazo anterior</h4>
+							<mat-form-field>
+								<select [(ngModel)]="initialForm.embarazoAnterior" name="embarazoAnterior" #embarazoAnterior="ngModel" matNativeControl>
+									<option value="">Selecciona</option>
+									<option value="1">Si</option>
+									<option value="2">No</option>
+								</select>
+							</mat-form-field>
+						</div>
+
+						<div [hidden]="initialForm.estasEmbarazada != 1">
+							<mat-form-field>
+								<input [(ngModel)]="initialForm.ovarioPoliquistico" name="ovarioPoliquistico" #ovarioPoliquistico="ngModel" matInput placeholder="**Has padecido ovario poliquistico">
+							</mat-form-field>
+						</div>
+
+						<h4>**Algun familiar directo ha padecido diabetes</h4>
+						<mat-form-field>
+							<select [(ngModel)]="initialForm.familiarDiabetes" name="familiarDiabetes" #familiarDiabetes="ngModel" matNativeControl>
+								<option value="">Selecciona</option>
+								<option value="1">Si</option>
+								<option value="2">No</option>
+							</select>
+						</mat-form-field>
+					</div>
 
 					<h4>Estado civil</h4>
 					<mat-form-field>
@@ -132,8 +175,15 @@
 						<input [(ngModel)]="initialForm.fumas" name="fumas" #fumas="ngModel" matInput placeholder="¿Fumas? ¿Con qué Frecuencia?">
 					</mat-form-field>
 
+					<h4>**¿Cuánta agua natural consumes al día?</h4>
 					<mat-form-field>
-						<input [(ngModel)]="initialForm.agualAlDia" name="agualAlDia" #agualAlDia="ngModel" matInput placeholder="**¿Cuánta agua natural consumes al día?">
+						<select [(ngModel)]="initialForm.agualAlDia" name="agualAlDia" #agualAlDia="ngModel" matNativeControl required>
+							<option value="">Selecciona</option>
+							<option value="1">Nada</option>
+							<option value="2">Un litro o menos</option>
+							<option value="3">Dos litros o menos</option>
+							<option value="4">Más de dos litros</option>
+						</select>
 					</mat-form-field>
 
 					<mat-form-field>
@@ -144,8 +194,14 @@
 						<input [(ngModel)]="initialForm.tomasAlcohol" name="tomasAlcohol" #tomasAlcohol="ngModel" matInput placeholder="¿Consumes alcohol? ¿Con qué frecuencia?">
 					</mat-form-field>
 
+					<h4>¿Sueles cocinar tus alimentos o alguien lo hace por ti?</h4>
 					<mat-form-field>
-						<input [(ngModel)]="initialForm.cocinas" name="cocinas" #cocinas="ngModel" matInput placeholder="¿Sueles cocinar tus alimentos o alguien lo hace por ti?">
+						<select [(ngModel)]="initialForm.cocinas" name="cocinas" #cocinas="ngModel" matNativeControl required>
+							<option value="">Selecciona</option>
+							<option value="1">Yo cocino mis alimentos</option>
+							<option value="2">Mi pareja cocina los alimentos</option>
+							<option value="3">Alguien me ayuda cocinando mis alimentos</option>
+						</select>
 					</mat-form-field>
 
 					<mat-form-field>
@@ -255,6 +311,301 @@
 
 					<mat-form-field>
 						<textarea [(ngModel)]="initialForm.saludVejes" name="saludVejes" #saludVejes="ngModel" matInput placeholder="¿Cómo te gustaría que fuera tu salud cuando llegues a una edad avanzada?" cols="30" rows="5"></textarea>
+					</mat-form-field>
+				</div>
+			</mat-card-content>
+		</mat-card>
+
+		<!-- Card 4 -->
+		<mat-card class="example-card">
+			<mat-card-header>
+				<mat-card-title>
+					SECCIÓN IV Ubica tu figura
+				</mat-card-title>
+			</mat-card-header>
+
+			<mat-card-content>
+				<div class="example-container">
+					<h4>Mi actividad principal es..</h4>
+					<mat-form-field>
+						<select [(ngModel)]="initialForm.actividadPrincipal" name="actividadPrincipal" #actividadPrincipal="ngModel" matNativeControl required>
+							<option value="">Selecciona</option>
+							<option value="1">Trabajar</option>
+							<option value="2">Estudiar</option>
+							<option value="3">Estar en casa</option>
+							<option value="4">Deporte</option>
+							<option value="5">Convivir con amigos y familiares</option>
+						</select>
+					</mat-form-field>
+
+					<h4>Durante el día...</h4>
+					<mat-form-field>
+						<select [(ngModel)]="initialForm.duranteDia" name="duranteDia" #duranteDia="ngModel" matNativeControl required>
+							<option value="">Selecciona</option>
+							<option value="1">Hago muchas actividades, me gusta ver que termino las cosas.</option>
+							<option value="2">Estoy enfocado mentalmente, haciendo trabajo intelectual.</option>
+							<option value="3">Convivo con mucha gente y platico de muchos temas.</option>
+						</select>
+					</mat-form-field>
+
+					<h4>Normalmente mis semanas son..</h4>
+					<mat-form-field>
+						<select [(ngModel)]="initialForm.semanasSon" name="semanasSon" #semanasSon="ngModel" matNativeControl required>
+							<option value="">Selecciona</option>
+							<option value="1">Muy llenas de actividades, a veces estresantes, pero siempre exigentes, para dar lo mejor de mi.</option>
+							<option value="2">Muy estructuradas, con un orden que sigo muy de cerca.</option>
+							<option value="3">Cada día es único, me gusta fluir con lo que va surgiendo, siempre hay tiempo para estar con las personas que me importan.</option>
+						</select>
+					</mat-form-field>
+
+					<h4>Lo que más se me facilita es...</h4>
+					<mat-form-field>
+						<select [(ngModel)]="initialForm.seMeFacilita" name="seMeFacilita" #seMeFacilita="ngModel" matNativeControl required>
+							<option value="">Selecciona</option>
+							<option value="1">Ser lider, lograr que los otros hagan lo que yo quiero hacer.</option>
+							<option value="2">Ser independiente, hacer mis propios planes y rutinas, sin depender de los demás.</option>
+							<option value="3">Ser muy servicial, ayudar a los demás a sentirse bien y a que ellos logren quieren.</option>
+						</select>
+					</mat-form-field>
+
+					<h4>Lo que me caracteriza en mis actividades es ser...</h4>
+					<mat-form-field>
+						<select [(ngModel)]="initialForm.meCaracteriza" name="meCaracteriza" #meCaracteriza="ngModel" matNativeControl required>
+							<option value="">Selecciona</option>
+							<option value="1">Una persona enérgica, que reconoce rápido las oportunidades y ventajas.</option>
+							<option value="2">Una persona práctica, que cuida de no precipitar las cosas antes de estar preparada.</option>
+							<option value="3">Una persona compasiva, que responde rápido a las necesidades.</option>
+						</select>
+					</mat-form-field>
+
+					<h4>Considero que casi siempre soy...</h4>
+					<mat-form-field>
+						<select [(ngModel)]="initialForm.casiSiempreSoy" name="casiSiempreSoy" #casiSiempreSoy="ngModel" matNativeControl required>
+							<option value="">Selecciona</option>
+							<option value="1">Una persona fuerte que dirige a los demás.</option>
+							<option value="2">Una persona cautelosa que calcula las situaciones antes de actuar.</option>
+							<option value="3">Una persona bondadosa en quien otros confían y pueden esperar ayuda.</option>
+						</select>
+					</mat-form-field>
+
+					<h4>Por naturaleza, mi forma de reaccionar es...</h4>
+					<mat-form-field>
+						<select [(ngModel)]="initialForm.reacciono" name="reacciono" #reacciono="ngModel" matNativeControl required>
+							<option value="">Selecciona</option>
+							<option value="1">Tomo la iniciativa para desarrollar acciones e influenciar decisiones.</option>
+							<option value="2">Soy paciente, práctico(a) y estoy seguro(a) de lo que hago.</option>
+							<option value="3">Hago lo mejor que puedo y espero que los demás reconozcan mi contribución.</option>
+						</select>
+					</mat-form-field>
+
+					<h4>Cuando me siento contento(a) conmigo mismo(a) gozo más...</h4>
+					<mat-form-field>
+						<select [(ngModel)]="initialForm.gozoMas" name="gozoMas" #gozoMas="ngModel" matNativeControl required>
+							<option value="">Selecciona</option>
+							<option value="1">Teniendo la satisfacción de que otras personas se dirijan a mí para guiarlos y darles el sentido de determinación.</option>
+							<option value="2">Siendo mi propio jefe, haciendo las cosas por mi y para mi mismo(a).</option>
+							<option value="3">Viendo que los demás se benefician de lo que yo he podido hacer por ellos.</option>
+						</select>
+					</mat-form-field>
+
+					<h4>Las personas que me conocen bien, me describirían como una persona:</h4>
+					<mat-form-field>
+						<select [(ngModel)]="initialForm.meDescribenComo" name="meDescribenComo" #meDescribenComo="ngModel" matNativeControl required>
+							<option value="">Selecciona</option>
+							<option value="1">Activa, enérgica, segura de mi y que a menudo ve oportunidades que otros pasan por alto.</option>
+							<option value="2">Cautelosa y justa que mantiene sus propias convicciones.</option>
+							<option value="3">Amistosa, abierta y que ve algo bueno en casi todas las personas.</option>
+						</select>
+					</mat-form-field>
+
+					<h4>Cuando me encuentro con una persona por primera vez...</h4>
+					<mat-form-field>
+						<select [(ngModel)]="initialForm.personaPrimeraVez" name="personaPrimeraVez" #personaPrimeraVez="ngModel" matNativeControl required>
+							<option value="">Selecciona</option>
+							<option value="1">Siento la curiosidad por averiguar a que se dedica y si podemos hacer algo ganar-ganar.</option>
+							<option value="2">Soy cortésmente reservado(a) hasta saber lo que se espera de mi.</option>
+							<option value="3">Es importante que me perciba como una persona agradable y amistosa.</option>
+						</select>
+					</mat-form-field>
+
+					<h4>Cuando me propongo algo, elijo mis objetivos...</h4>
+					<mat-form-field>
+						<select [(ngModel)]="initialForm.mePropongoAlgo" name="mePropongoAlgo" #mePropongoAlgo="ngModel" matNativeControl required>
+							<option value="">Selecciona</option>
+							<option value="1">Por mi instinto, en mi propia iniciativa. Me gusta hacer lo que yo quiero.</option>
+							<option value="2">Busco la información más adecuada, de libros, de expertos y de personas realmente capacitadas que me lleven más fácil al éxito.</option>
+							<option value="3">Me gusta tomar en cuenta a las personas que son importantes para mi y pregunto si alguien ha estado en la misma situación.</option>
+						</select>
+					</mat-form-field>
+
+					<h4>Antes de entrar en acción...</h4>
+					<mat-form-field>
+						<select [(ngModel)]="initialForm.antesAccion" name="antesAccion" #antesAccion="ngModel" matNativeControl required>
+							<option value="">Selecciona</option>
+							<option value="1">Me mentalizo en lo que quiero y me enfoco en mi meta.</option>
+							<option value="2">Hago una revisión de todo lo que se necesita, qué cosas ya tengo y cuales voy a conseguir antes de empezar.</option>
+							<option value="3">Busco apoyo en amigos y familiares, para asegurarme que voy a hacer las cosas hasta el final.</option>
+						</select>
+					</mat-form-field>
+
+					<h4>La forma más fácil de darle seguimiento o continuidad a algo es...</h4>
+					<mat-form-field>
+						<select [(ngModel)]="initialForm.darleSeguimiento" name="darleSeguimiento" #darleSeguimiento="ngModel" matNativeControl required>
+							<option value="">Selecciona</option>
+							<option value="1">Haciendo las cosas, sobre la marcha se resuelven las cosas.</option>
+							<option value="2">Llevando un orden y un registro de manera ordenada.</option>
+							<option value="3">Platicando con las personas de cómo voy y comprometiéndome a hacer el siguiente paso.</option>
+						</select>
+					</mat-form-field>
+
+					<h4>Ante una dificultad:</h4>
+					<mat-form-field>
+						<select [(ngModel)]="initialForm.anteDificultad" name="anteDificultad" #anteDificultad="ngModel" matNativeControl required>
+							<option value="">Selecciona</option>
+							<option value="1">Me esfuerzo el doble</option>
+							<option value="2">Hago una revisión de la situación, analizo e investigo más de cómo superar la dificultad y lograr mi meta.</option>
+							<option value="3">Busco apoyo para desahogarme y sacar las emociones negativas.</option>
+						</select>
+					</mat-form-field>
+
+					<h4>Me siento más satisfecho cuando...</h4>
+					<mat-form-field>
+						<select [(ngModel)]="initialForm.satisfecho" name="satisfecho" #satisfecho="ngModel" matNativeControl required>
+							<option value="">Selecciona</option>
+							<option value="1">Logré mi meta por mi propio esfuerzo.</option>
+							<option value="2">Hice bien todos los pasos y seguí un orden (metodología) hasta alcanzar el resultado que elegí.</option>
+							<option value="3">Disfruté el camino hacia mi meta, estando acompañado y acompañando a las personas que me importan.</option>
+						</select>
+					</mat-form-field>
+
+					<h4>Para mí, el verdadero logro es:</h4>
+					<mat-form-field>
+						<select [(ngModel)]="initialForm.verdaderoLogro" name="verdaderoLogro" #verdaderoLogro="ngModel" matNativeControl required>
+							<option value="">Selecciona</option>
+							<option value="1">Alcanzar mi meta lo antes posible.</option>
+							<option value="2">Aprender lo más importante y alcanzar mi meta.</option>
+							<option value="3">Festejar mis logros.</option>
+						</select>
+					</mat-form-field>
+
+					<h4>Cuando como, prefiero sabores:</h4>
+					<mat-form-field>
+						<select [(ngModel)]="initialForm.prefieroSavores" name="prefieroSavores" #prefieroSavores="ngModel" matNativeControl required>
+							<option value="">Selecciona</option>
+							<option value="1">Salados, picantes o con muchas especies</option>
+							<option value="2">Neutros</option>
+							<option value="3">Dulces</option>
+						</select>
+					</mat-form-field>
+
+					<h4>Prefiero comer:</h4>
+					<mat-form-field>
+						<select [(ngModel)]="initialForm.prefieroComer" name="prefieroComer" #prefieroComer="ngModel" matNativeControl required>
+							<option value="">Selecciona</option>
+							<option value="1">Rápido</option>
+							<option value="2">Lento</option>
+							<option value="3">Según la plática que tengo.</option>
+						</select>
+					</mat-form-field>
+
+					<h4>La cantidad de comida que prefiero para sentirme satisfecho es:</h4>
+					<mat-form-field>
+						<select [(ngModel)]="initialForm.cantidadComidaSatisfecho" name="cantidadComidaSatisfecho" #cantidadComidaSatisfecho="ngModel" matNativeControl required>
+							<option value="">Selecciona</option>
+							<option value="1">Lo normal, ni mucho ni poco</option>
+							<option value="2">Poca</option>
+							<option value="3">Mucha</option>
+						</select>
+					</mat-form-field>
+
+					<h4>Cuando sigo una dieta me gusta..</h4>
+					<mat-form-field>
+						<select [(ngModel)]="initialForm.sigoDietaMeGusta" name="sigoDietaMeGusta" #sigoDietaMeGusta="ngModel" matNativeControl required>
+							<option value="">Selecciona</option>
+							<option value="1">Sentirme satisfecho al comer.</option>
+							<option value="2">Saber el porqué de las cosas.</option>
+							<option value="3">Tener muchos alimentos libres.</option>
+						</select>
+					</mat-form-field>
+
+					<h4>Cuando sigo una dieta, NO me gusta...</h4>
+					<mat-form-field>
+						<select [(ngModel)]="initialForm.sigoDietaNoMeGusta" name="sigoDietaNoMeGusta" #sigoDietaNoMeGusta="ngModel" matNativeControl required>
+							<option value="">Selecciona</option>
+							<option value="1">Comer alimentos muy ligeros</option>
+							<option value="2">Comer mucho volumen de alimento (mucha lechuga, por ejemplo)</option>
+							<option value="3">Tener que limitar la cantidad de alimentos</option>
+						</select>
+					</mat-form-field>
+
+					<h4>Cuando estoy cansado...</h4>
+					<mat-form-field>
+						<select [(ngModel)]="initialForm.estoyCansado" name="estoyCansado" #estoyCansado="ngModel" matNativeControl required>
+							<option value="">Selecciona</option>
+							<option value="1">Físicamente siento dolores musculares o “calambres” y me siento algo agotado.</option>
+							<option value="2">Me duele la cabeza.</option>
+							<option value="3">Tengo mal humor.</option>
+						</select>
+					</mat-form-field>
+
+					<h4>Si llego a tener antojos de comida busco algo que sea...</h4>
+					<mat-form-field>
+						<select [(ngModel)]="initialForm.misAntojos" name="misAntojos" #misAntojos="ngModel" matNativeControl required>
+							<option value="">Selecciona</option>
+							<option value="1">Picante o agridulce.</option>
+							<option value="2">Salado.</option>
+							<option value="3">Dulce.</option>
+						</select>
+					</mat-form-field>
+
+					<h4>Cuando necesito concentrarme en algo...</h4>
+					<mat-form-field>
+						<select [(ngModel)]="initialForm.meConcentro" name="meConcentro" #meConcentro="ngModel" matNativeControl required>
+							<option value="">Selecciona</option>
+							<option value="1">Prefiero que sea rápido para pasar a la acción</option>
+							<option value="2">Para mi es fácil, se me va el tiempo enfocado en una cosa.</option>
+							<option value="3">Me tomo mi tiempo y creo que rindo mejor si bebo café o algo parecido</option>
+						</select>
+					</mat-form-field>
+
+					<h4>Cuando realizo una actividad física...</h4>
+					<mat-form-field>
+						<select [(ngModel)]="initialForm.cuandoActividadFisica" name="cuandoActividadFisica" #cuandoActividadFisica="ngModel" matNativeControl required>
+							<option value="">Selecciona</option>
+							<option value="1">Me siento bien, creo que soy más rápido que los demás.</option>
+							<option value="2">Le encuentro sentido si es parte de una disciplina o una rutina. Es decir, si tiene que ver con algo más grande o de largo plazo.</option>
+							<option value="3">Prefiero la moderación para no agotarme. Además. creo que si estoy acompañada (o) es más fácil.</option>
+						</select>
+					</mat-form-field>
+
+					<h4>Mi estado de ánimo se caracteriza por...</h4>
+					<mat-form-field>
+						<select [(ngModel)]="initialForm.estadoDeAnimo" name="estadoDeAnimo" #estadoDeAnimo="ngModel" matNativeControl required>
+							<option value="">Selecciona</option>
+							<option value="1">Ser siempre muy activo y, a veces, si me falta actividad me siento nervioso o ansioso.</option>
+							<option value="2">Soy reflexivo, tengo gran imaginación y, para mi, es importante pensar con claridad.</option>
+							<option value="3">La gente me dice que soy muy tranquilo, tengo pocas urgencias y creo que lo principal es crear buenas relaciones.</option>
+						</select>
+					</mat-form-field>
+
+					<h4>Si llego a tener problemas al dormir es porque...</h4>
+					<mat-form-field>
+						<select [(ngModel)]="initialForm.problemasAlDormir" name="problemasAlDormir" #problemasAlDormir="ngModel" matNativeControl required>
+							<option value="">Selecciona</option>
+							<option value="1">Siento tensión muscular o dolores de espalda o cabeza.</option>
+							<option value="2">A veces tengo insomnio o me levanto varias veces en la noche</option>
+							<option value="3">Tengo problemas para levantarme de la cama.</option>
+						</select>
+					</mat-form-field>
+
+					<h4>Una de las cosas más importantes para mi...</h4>
+					<mat-form-field>
+						<select [(ngModel)]="initialForm.cosasImportantes" name="cosasImportantes" #cosasImportantes="ngModel" matNativeControl required>
+							<option value="">Selecciona</option>
+							<option value="1">Poder "ganar", los resultados cuentan, y yo quiero superarme a mi mismo y a los demás.</option>
+							<option value="2">Entender las cosas, de forma completa y profunda. Es importante reflexionar para vivir con más estabilidad.</option>
+							<option value="3">Los sentimientos y las vivencias, me gusta platicar y que me compartan lo que es más profundo en una persona.</option>
+						</select>
 					</mat-form-field>
 				</div>
 			</mat-card-content>
